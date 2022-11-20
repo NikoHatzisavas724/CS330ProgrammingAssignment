@@ -5,20 +5,23 @@ public class Keypad {
 	private String[] out;
 
 	private void initialize_stt() {
-		this.stt = new int[6][10];
+		this.stt = new int[8][10];
 		this.out = new String[8];
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 10; j++) {
 				this.stt[i][j] = 0;
 			}
 		}
 		stt[0][8] = 1;
 		stt[1][3] = 2;
+		stt[1][8] = 1;
 		stt[2][2] = 3;
 		stt[3][0] = 4;
 		stt[4][0] = 5;
 		stt[5][1] = 6;
 		stt[5][4] = 7;
+		stt[6][8] = 1;
+		stt[7][8] = 1;
 
 		out[0] = "";
 		out[1] = "";
