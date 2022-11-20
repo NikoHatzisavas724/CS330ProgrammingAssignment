@@ -1,3 +1,5 @@
+package hatzisavas.edu.iit.cs330.fall2022;
+
 public class Keypad {
 	private int current_state;
 	private String current_output;
