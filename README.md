@@ -18,7 +18,7 @@ may be replaced with the following on a Linux based system:
   3. Make sure all unit tests pass:
     `gradlew test`
     Use your browser to view the html report, which is located at:
-    `\app\build\reports\tests\test\packages\hatzisavas.edu.iit.cs330.fall2022.html`
+    `app\build\reports\tests\test\packages\hatzisavas.edu.iit.cs330.fall2022.html`
   4. Build an executable jar file:
     `gradlew jar`
   5. Run the executable:
@@ -27,7 +27,7 @@ may be replaced with the following on a Linux based system:
   6. Generate jacoco unit-test coverage report:
     `gradlew jacocoTestReport`
     Use your browser to view the html report, which is located at: 
-    `\app\build\reports\jacoco\test\html\hatzisavas.edu.iit.cs330.fall2022\index.html`
+    `app\build\reports\jacoco\test\html\hatzisavas.edu.iit.cs330.fall2022\index.html`
 
 # Known Issues
 Strings that represent negative integers are read as positive integers. This is because the minus sign gets disregardeed as it is not an integer, but the number it was in front of is read without the minuts sign. 
