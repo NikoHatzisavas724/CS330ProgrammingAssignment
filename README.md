@@ -1,5 +1,4 @@
 # README
-IIT Fall 2022, CS330 Programming Assignment 
 
 # What is this repository for?
 This repository contains Java code for a security device that utilizes a finite state machine (FSM). This was created for the programming project of the fall 2022 CS330 course at IIT. This code implements an FSM that accepts a 5 digit access code (83200). Depending on whether 1 or 4 is entered afterwards, it locks or unlocks. 832001 unlocks the device, and 832004 locks the device. Any digit not in the access code will rest the FSM to its initial state. Ant input that is not an integer will be discarded. The application uses an unbuffered input stream and goes character by character though the input which may be as long as the user desires.  
@@ -28,3 +27,14 @@ may be replaced with the following on a Linux based system:
     `gradlew jacocoTestReport`
     Use your browser to view the html report, which is located at: 
     `\app\build\reports\jacoco\test\html\hatzisavas.edu.iit.cs330.fall2022\index.html`
+
+# Known Issues
+Strings that represent negative integers are read as positive integers. This is because the minus sign gets disregardeed as it is not an integer, but the number it was in front of is read without the minuts sign. 
+
+# License 
+[GNU Public License](https://www.gnu.org/licenses/gpl-3.0.html)
+
+# About The Author 
+Name: Nicholas Hatzisavas 
+
+Email: nhatzisavas@hawk.iit.edu
