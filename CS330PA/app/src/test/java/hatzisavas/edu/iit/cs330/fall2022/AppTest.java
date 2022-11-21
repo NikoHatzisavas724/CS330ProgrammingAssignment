@@ -5,10 +5,30 @@ package hatzisavas.edu.iit.cs330.fall2022;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    @Test
+    void test_that_readInput_returns_the_digit_supplied() throws IOException {
+        SecurityInstallation app = new SecurityInstallation();
+        String str = "1";
+        InputStream is = new ByteArrayInputStream(str.getBytes());
+		InputStreamReader in = new InputStreamReader(is);
+        assertEquals(1, app.readInput(in));
+        in.close();
+    }
+    
+    @Test
+    void test_that_readInput_ignores_non_digits() throws IOException {
+    	SecurityInstallation app = new SecurityInstallation();
+        String str = "a bcd e 2";
+        InputStream is = new ByteArrayInputStream(str.getBytes());
+		InputStreamReader in = new InputStreamReader(is);
+        assertEquals(2, app.readInput(in));
+        in.close();
     }
 }
