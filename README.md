@@ -22,7 +22,8 @@ may be replaced with the following on a Linux based system:
   4. Build an executable jar file:
     `gradlew jar`
   5. Run the executable:
-    `java -jar \app\build\libs\app.jar`
+    `java -jar app\build\libs\app.jar`
+    Since the application runs on an infinite loop which endlessly accepts user input, use Ctrl+C to terminate the program. 
   6. Generate jacoco unit-test coverage report:
     `gradlew jacocoTestReport`
     Use your browser to view the html report, which is located at: 
