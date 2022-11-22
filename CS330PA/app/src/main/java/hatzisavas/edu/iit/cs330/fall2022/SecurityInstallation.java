@@ -7,11 +7,39 @@ import java.util.Arrays;
 
 public class SecurityInstallation {
 
+	static Keypad kp1;
+	static boolean kpCreated = false;
+	static InputStreamReader in;
+
 	public static void main(String[] args) throws IOException {
-		Keypad kp1 = new Keypad();
-		InputStreamReader in = new InputStreamReader(System.in);
 		while (true) {
-			int intInput = readInput(in);
+			char inp = (char) in.read();
+			if (inp != '\r' && inp != '\n') {
+				simulateKeypad(inp);
+			}
+		}
+	}
+
+	static int readInput(char in) throws IOException {
+		int intInput = 0000;
+		char input = (char) in;
+		Character allowed[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+		ArrayList<Character> allowedList = new ArrayList<Character>();
+		allowedList.addAll(Arrays.asList(allowed));
+		if (allowedList.contains(input)) {
+			intInput = Character.getNumericValue(input);
+		} else {
+			intInput = 9999;
+		}
+		return intInput;
+	}
+
+	static void simulateKeypad(char in) throws IOException {
+		if (!kpCreated) {
+			createKeypad();
+		}
+		int intInput = readInput(in);
+		if (intInput != 9999) {
 			kp1.input(intInput);
 			String output = kp1.getOutput();
 			if (output.equals("Unlocked") || output.equals("Locked")) {
@@ -20,20 +48,9 @@ public class SecurityInstallation {
 		}
 	}
 
-	static int readInput(InputStreamReader in) throws IOException {
-		boolean valid = false;
-		int intInput = 0000;
-		while (!valid) {
-			char input = (char) in.read();
-			Character allowed[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-			ArrayList<Character> allowedList = new ArrayList<Character>();
-			allowedList.addAll(Arrays.asList(allowed));
-			if (allowedList.contains(input)) {
-				intInput = Character.getNumericValue(input);
-				valid = true;
-			}
-		}
-		return intInput;
+	static void createKeypad() {
+		kp1 = new Keypad();
+		in = new InputStreamReader(System.in);
+		kpCreated = true;
 	}
-
 }

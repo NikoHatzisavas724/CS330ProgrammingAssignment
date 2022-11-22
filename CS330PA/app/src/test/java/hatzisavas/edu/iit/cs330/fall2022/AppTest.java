@@ -5,30 +5,67 @@ package hatzisavas.edu.iit.cs330.fall2022;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import java.io.PrintStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 
 class AppTest {
-    @Test
-    void test_that_readInput_returns_the_digit_supplied() throws IOException {
-        SecurityInstallation app = new SecurityInstallation();
-        String str = "1";
-        InputStream is = new ByteArrayInputStream(str.getBytes());
-		InputStreamReader in = new InputStreamReader(is);
-        assertEquals(1, app.readInput(in));
-        in.close();
-    }
-    
-    @Test
-    void test_that_readInput_ignores_non_digits() throws IOException {
-    	SecurityInstallation app = new SecurityInstallation();
-        String str = "a bcd e 2";
-        InputStream is = new ByteArrayInputStream(str.getBytes());
-		InputStreamReader in = new InputStreamReader(is);
-        assertEquals(2, app.readInput(in));
-        in.close();
-    }
+	private final PrintStream standardOut = System.out;
+	private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+
+	@Test
+	void test_that_readInput_returns_the_digit_supplied() throws IOException {
+		SecurityInstallation app = new SecurityInstallation();
+		char ch = '1';
+		assertEquals(1, app.readInput(ch));
+	}
+
+	@Test
+	void test_that_simulateKeypad_unlocks_when_832001_entered() throws IOException {
+		System.setOut(new PrintStream(outputStreamCaptor));
+		SecurityInstallation app = new SecurityInstallation();
+		String str = "832001";
+		for (int i = 0; i < 6; i++) {
+			app.simulateKeypad(str.charAt(i));
+		}
+		assertEquals("Unlocked", outputStreamCaptor.toString().trim());
+		System.setOut(standardOut);
+	}
+
+	@Test
+	void test_that_simulateKeypad_locks_when_832004_entered() throws IOException {
+		System.setOut(new PrintStream(outputStreamCaptor));
+		SecurityInstallation app = new SecurityInstallation();
+		String str = "832004";
+		for (int i = 0; i < 6; i++) {
+			app.simulateKeypad(str.charAt(i));
+		}
+		assertEquals("Locked", outputStreamCaptor.toString().trim());
+		System.setOut(standardOut);
+	}
+
+	@Test
+	void test_that_simulateKeypad_ignores_non_digits() throws IOException {
+		System.setOut(new PrintStream(outputStreamCaptor));
+		SecurityInstallation app = new SecurityInstallation();
+		String str = "a bcd e 832001";
+		for (int i = 0; i < 14; i++) {
+			app.simulateKeypad(str.charAt(i));
+		}
+		assertEquals("Unlocked", outputStreamCaptor.toString().trim());
+		System.setOut(standardOut);
+	}
+	
+	@Test
+	void test_that_simulateKeypad_outputs_nothing_without_full_access_key() throws IOException {
+		System.setOut(new PrintStream(outputStreamCaptor));
+		SecurityInstallation app = new SecurityInstallation();
+		String str = "a bcd e 83200";
+		for (int i = 0; i < 13; i++) {
+			app.simulateKeypad(str.charAt(i));
+		}
+		assertEquals("", outputStreamCaptor.toString().trim());
+		System.setOut(standardOut);
+	}
 }

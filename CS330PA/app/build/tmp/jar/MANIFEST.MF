@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: hatzisavas.edu.iit.cs330.fall2022.SecurityInstallation
-

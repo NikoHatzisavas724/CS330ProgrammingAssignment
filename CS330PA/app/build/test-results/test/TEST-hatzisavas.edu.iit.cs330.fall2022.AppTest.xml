@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hatzisavas.edu.iit.cs330.fall2022.AppTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-11-21T08:53:52" hostname="NIKO-LAPTOP" time="0.004">
-  <properties/>
-  <testcase name="test_that_readInput_ignores_non_digits()" classname="hatzisavas.edu.iit.cs330.fall2022.AppTest" time="0.002"/>
-  <testcase name="test_that_readInput_returns_the_digit_supplied()" classname="hatzisavas.edu.iit.cs330.fall2022.AppTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
