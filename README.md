@@ -9,7 +9,7 @@ You must have [Gradle](https://gradle.org/) and [Java](https://www.oracle.com/ja
 ## Configuration 
   1. Open the command prompt and clone the repository:
     `git clone https://github.com/NikoHatzisavas724/CS330ProgrammingAssignment.git`
-  2. Change directory to where the gradle files are: 
+  2. Change directory to where the gradle files are (this directory is `CS330ProgrammingAssignment/CS330PA/`): 
     `cd CS330ProgrammingAssignment/CS330PA/`
     Note, all Gradle commands should be run from this directory.
   3. Make sure all unit tests pass:
