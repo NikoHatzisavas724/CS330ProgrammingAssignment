@@ -21,6 +21,9 @@ You must have [Gradle](https://gradle.org/) and [Java](https://www.oracle.com/ja
   5. Run the executable:
     `java -jar app\build\libs\app.jar`
     Enter characters on the keyboard, as many as you want. As the program uses the unbuffered InputStreamReader to take input character by character, there is no risk of buffer overflow so there is no limit to the number of characters that may be entered at once. When you are finished entering, press enter/return. If the code 832001 is found anywhere in the string you entered, the console will display the message "Unlocked", and if the code 832004 is present it will display the message "Locked". If both are present it will display them one after the other in the order that they were entered. Any characters may be entered, as any non-integer characters will be disregarded by the program. After pressing enter, additional strings may be entered. Since the application runs on an infinite loop that endlessly accepts user input, you can use Ctrl+C to terminate the program from the Windows command prompt. 
+    
+     Alternatively, data may be entered into the application from a file present in the directory `CS330ProgrammingAssignment/CS330PA/` (for this example, a file named mydata.txt is used) using the following command:
+    `java -jar app\build\libs\app.jar < mydata.txt`
   6. Generate jacoco unit-test coverage report:
     `gradlew jacocoTestReport`
     Use your browser to view the HTML report, which is located at: 
