@@ -9,7 +9,7 @@ public class SecurityInstallation {
 
 	static Keypad kp1;
 	static boolean kpCreated = false;
-	static InputStreamReader in;
+	static InputStreamReader in = new InputStreamReader(System.in);
 
 	public static void main(String[] args) throws IOException {
 		while (true) {
