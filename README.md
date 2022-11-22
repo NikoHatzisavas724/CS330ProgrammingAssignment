@@ -4,7 +4,7 @@
 This repository contains Java code for a security device that utilizes a finite state machine (FSM). This was created for the programming project of the fall 2022 CS330 course at IIT. This code implements an FSM that accepts a 5-digit access code (83200). Depending on whether 1 or 4 is entered afterward, it locks or unlocks. 832001 unlocks the device, and 832004 locks the device. Any digit not in the access code will rest the FSM to its initial state. Ant input that is not an integer will be discarded. The application uses an unbuffered input stream and goes character by character through the input which may be as long as the user desires.  
 
 # Setup Instructions 
-You must have [Gradle](https://gradle.org/) installed before the setup. Instructions for how to set up Gradle can be found [here](https://gradle.org/install/). The following instructions are for a Windows 10/11 environment. This has only been tested in Windows, however, equivalent commands should work in Linux-based systems. For example, the Windows command: 
+You must have [Gradle](https://gradle.org/) and [Java](https://www.oracle.com/java/technologies/downloads/) installed before the setup. Instructions for how to set up Gradle can be found [here](https://gradle.org/install/). The following instructions are for a Windows 10/11 environment. This has only been tested in Windows, however, equivalent commands should work in Linux-based systems. For example, the Windows command: 
 `git clone`
 may be replaced with the following on a Linux based system: 
 `$ git clone`
