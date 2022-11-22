@@ -9,9 +9,9 @@ public class SecurityInstallation {
 
 	static Keypad kp1;
 	static boolean kpCreated = false;
-	static InputStreamReader in = new InputStreamReader(System.in);
 
 	public static void main(String[] args) throws IOException {
+		InputStreamReader in = new InputStreamReader(System.in);
 		while (true) {
 			char inp = (char) in.read();
 			if (inp != '\r' && inp != '\n') {
@@ -50,7 +50,6 @@ public class SecurityInstallation {
 
 	static void createKeypad() {
 		kp1 = new Keypad();
-		in = new InputStreamReader(System.in);
 		kpCreated = true;
 	}
 }
