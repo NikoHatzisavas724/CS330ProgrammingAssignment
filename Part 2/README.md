@@ -11,8 +11,10 @@ You must have [Gradle](https://gradle.org/) and [Java](https://www.oracle.com/ja
     `git clone https://github.com/NikoHatzisavas724/CS330ProgrammingAssignment.git`
   2. Change directory to the part 2 folder. The following instruction assumes your current directory is the base folder of the repo (CS330ProgrammingAssignment).
     `cd Part 2\Gradle`
+    
      If your current directory is outside the repo folder (like it would be if you had just cloned the repo), use the following command instead: 
      `cd CS330ProgrammingAssignment\Part 2\Gradle`
+     
      If you are in the directory `CS330ProgrammingAssignment\CS330PA` (like you would be if you had just finished part 1), use the following commands instread:
      ```
      cd ..
