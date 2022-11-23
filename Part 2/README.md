@@ -1,7 +1,7 @@
 # README - Part 2 
 
 # What is this for? 
-The code in this folder simulates an intruder generating random digits until they break the lock on the Security Installation. It does this by generating random digits until the unlock code, "832001" is generated and counting the amount of digits that were genereated before the unlock code. This trial is run 150 times by the application. This application will then display the average, minimum, and maximum amount of digits generated before the unlock code. This is the program used to obtain the data that is used in `Part 2.docx`. 
+The code in this folder simulates an intruder generating random digits until they break the lock on the Security Installation. It does this by generating random digits until the unlock code, "832001", is generated and counting the amount of digits that were genereated before the unlock code. This trial is run 150 times by the application. This application will then display the average, minimum, and maximum amount of digits generated before the unlock code. This is the program used to obtain the data that is used in `Part 2.docx`. 
 
 # Setup Instructions 
 You must have [Gradle](https://gradle.org/) and [Java](https://www.oracle.com/java/technologies/downloads/) installed before the setup. Instructions for how to set up Gradle can be found [here](https://gradle.org/install/). The following instructions are for a Windows 10/11 environment. This has only been tested in Windows 10, however, it should work the same way in Windows 11. Additionally, the following commands are for use in the Windows command prompt. Equivalent Linux commands should work in Linux based systems. 
