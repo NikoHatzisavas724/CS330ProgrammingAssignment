@@ -13,6 +13,7 @@ You must have [Gradle](https://gradle.org/) and [Java](https://www.oracle.com/ja
     `cd Part 2\Gradle`
     
      If your current directory is outside the repo folder (like it would be if you had just cloned the repo), use the following command instead: 
+     
      `cd CS330ProgrammingAssignment\Part 2\Gradle`
      
      If you are in the directory `CS330ProgrammingAssignment\CS330PA` (like you would be if you had just finished part 1), use the following commands instread:
