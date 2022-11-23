@@ -21,5 +21,5 @@ You must have [Gradle](https://gradle.org/) and [Java](https://www.oracle.com/ja
   3. Build an executable jar file: 
     `gradlew jar`
   4. Run the executable:
-     `java -jar Gradle\app\build\libs\app.jar`
+     `java -jar app\build\libs\app.jar`
      This will start the program which generates 150 trial runs of breaking the lock, and will output the average, minimum, and maximum number of digits generated before the unlock key to the console. It will then terminate. 
