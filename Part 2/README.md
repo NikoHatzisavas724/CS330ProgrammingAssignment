@@ -21,6 +21,9 @@ You must have [Gradle](https://gradle.org/) and [Java](https://www.oracle.com/ja
      cd ..
      cd Part 2\Gradle
      ```
+     
+     If you are in the directory of this file (CS330ProgrammingAssignment\Part 2), use the following command: 
+     `cd Gradle`
   3. Build an executable jar file: 
     `gradlew jar`
   4. Run the executable:
