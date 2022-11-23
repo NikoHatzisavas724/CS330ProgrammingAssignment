@@ -13,8 +13,13 @@ You must have [Gradle](https://gradle.org/) and [Java](https://www.oracle.com/ja
     `cd Part 2\Gradle`
      If your current directory is outside the repo folder (like it would be if you had just cloned the repo), use the following command instead: 
      `cd CS330ProgrammingAssignment\Part 2\Gradle`
+     If you are in the directory `CS330ProgrammingAssignment\CS330PA` (like you would be if you had just finished part 1), use the following commands instread:
+     ```
+     cd ..
+     cd Part 2\Gradle
+     ```
   3. Build an executable jar file: 
     `gradlew jar`
   4. Run the executable:
-     `Gradle\app\build\libs\app.jar`
+     `java -jar app\build\libs\app.jar`
      This will start the program which generates 150 trial runs of breaking the lock, and will output the average, minimum, and maximum number of digits generated before the unlock key to the console. It will then terminate. 
